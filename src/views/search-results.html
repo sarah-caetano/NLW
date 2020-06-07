@@ -1,0 +1,76 @@
+{% extends "layout.html" %} <!--A comunicação entre os dois arquivos ocorre aqui-->
+
+{% set pageId = "page-search-results" %}
+
+{% block title %}
+    <title>Resultado da Pesquisa</title>  <!--Título da página-->
+{% endblock title %}
+
+<!--Importação de arquivos-->
+{% block styles %}
+    <link rel="stylesheet" href="styles/search-results.css">
+{% endblock styles %}
+
+{% block content %}
+    {% include "partials/page-header.html" %}
+
+    <main>
+
+    {% if total == 1 %}
+        <h4>
+            <strong>1 ponto</strong>
+            encontrado
+        </h4>
+        <div class="cards">
+
+            {% for place in places %} <!--essa é a estrutura de repetição no NunJucks-->
+                
+                <div class="card">
+                    <img src="{{ place.image }}" alt="{{ place.name }}">
+                    <h1>{{ place.name }}</h1>
+                    <h3>{{ place.items }}</h3>
+                    <p>
+                        {{ place.city }}, {{ place.state }}
+                        <br/>
+                        {{ place.address }}
+                        <br/>
+                        {{ place.address2 }}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% elif total > 1 %}
+        <h4>
+            <strong>{{ total }} pontos</strong>
+            encontrados
+        </h4>
+
+        <div class="cards">
+
+            {% for place in places %} <!--essa é a estrutura de repetição no NunJucks-->
+                
+                <div class="card">
+                    <img src="{{ place.image }}" alt="{{ place.name }}">
+                    <h1>{{ place.name }}</h1>
+                    <h3>{{ place.items | replace(",", ",\t") }}</h3>
+                    <p>
+                        {{ place.city }}, {{ place.state }}
+                        <br/>
+                        {{ place.address }}
+                        <br/>
+                        {{ place.address2 }}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    
+    {%else%} 
+    <h4><strong>Nenhum</strong> ponto encontrado</h4>
+    
+    {% endif %}
+
+    </main>
+{% endblock content %}
+
+<!--Não se terão JS nessa página -> serão apenas listas de informações-->

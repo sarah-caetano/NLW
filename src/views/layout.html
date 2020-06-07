@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8"> <!--Aceita caracteres especiais-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--O site caberá em telas de diversos tamanhos-->
+
+    {% block title %}
+        <title>Ecoleta</title> <!--Título da página, será colocado automaticamente se a página não tiver seu próprio título-->
+    {% endblock title %}
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet"> <!--AQUI USAMOS DUAS FONTES!-->
+
+    <!--Importação de arquivos-->
+    <link rel="stylesheet" href="styles/main.css"> 
+    {% block styles %}
+    {% endblock styles %}
+    <link rel="stylesheet" href="styles/responsive.css">
+
+</head>
+
+<body>
+
+    <div id="{{ pageId }}"> <!--Responsável pela tela inicial-->
+        {% block content %} <!--conteudo-->
+        {% endblock content %}
+    </div>
+
+    {% block modal %}
+    {% endblock modal %}
+
+    {% block scripts %}
+    {% endblock scripts %}
+</body>
+</html>

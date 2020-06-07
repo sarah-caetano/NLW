@@ -1,0 +1,53 @@
+{% extends "layout.html" %} <!--A comunicação entre os dois arquivos ocorre aqui-->
+{% set pageId = "page-home" %}
+<!-- 
+    HTML
+    Hipertext 
+        hiper texto
+    Markup
+        Maração de texto
+    Language
+        Linguagem
+-->
+<!--Os "h´s são marcações de texto->hiperlinks"-->
+    
+<!--Importação de arquivos-->
+{% block styles %}
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/modal.css">
+{% endblock styles %}
+
+{% block content %}
+    <div class="content">
+        <header> <!--Titulozinhos em cima-->
+
+            <img src="/assets/logo.svg" alt="Logomarca"> <!--src=source=de onde tira a imagem//alt=o que mostrar alternativamente ao src-->
+    
+            <a href="/create-point">
+                <span></span> <!--É o símbolo ao lado do texto-->
+                Cadastre um ponto de coleta
+            </a>
+
+        </header>
+
+        <main>
+            <h1>Seu marketplace de coleta de resíduos</h1>
+
+            <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</p>
+
+            <a href="#">
+                <span></span> <!--Tbm é um símbolo ao lado do texto-->
+                <strong>Pesquisar pontos de coleta </strong> <!--O texto e suas configurações-->
+            </a> <!--O elemento "a deixa o lugar de clicar sem ser com bordas!"-->
+        </main>
+    
+    </div>
+{% endblock content %}
+
+{% block modal %}
+    {% include "partials/modal.html"%} <!--no index.js tem a lógica do site que manipula esse html-->
+{% endblock modal %}
+
+{% block scripts %}
+    <script src="/scripts/index.js"></script>
+{% endblock scripts %}

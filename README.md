@@ -5,6 +5,7 @@ Foi uma semana de muito aprendizado com as linguagens:
 - JavaScript
 - CSS
 - HTML
+
 Usando tecnologias como:
 - Node.js
 - SQL

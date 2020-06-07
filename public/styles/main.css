@@ -1,0 +1,35 @@
+:root{ /*variáveis globais! :)*/
+    --title-color: #322153;
+    --primary-color: #34cb79; 
+    --white-color: #f0f0f5; 
+}
+
+*{/*definição de comportamentos padrões*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   /*para o padding não aumentar mais que o max-width:
+                                uma caixa não pode ter seu tamanho definido pelo
+                                seu contúdo, mas sim pelas suas bordas*/
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background: var(--white-color);
+    -webkit-font-smoothing: antialiased;
+}
+a{
+    text-decoration: none; /*tinha uma linha embaixo do texto, esse comando tira ela de todos os elementos "a"*/
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--title-color);
+}
+/*BOX MODEL
+    Modelo de caixa
+    Toda caixa tem: largura, altura, espaçamento, preenchimento
+    bordas, cor, fundo, maneira que é vista pelo html (display),
+    alinhamentos
+*/

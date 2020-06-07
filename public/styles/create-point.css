@@ -1,0 +1,166 @@
+#page-create-point{
+    width: 90%;
+    max-width: 1100px;
+    /*Padrão de alinhamento de caixa (pelo lado de fora-o de dentro é o flex)*/
+    margin: 0 auto;
+}
+#page-create-point header{
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#page-create-point header a {
+    color: var(--title-color); /*que está no main.css*/
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+}
+#page-create-point header a span{
+    margin-right: 16px;
+    background-image: url('../assets/arrow-left.svg');
+
+    display: flex;
+
+    width: 20px;
+    height: 24px; /*antes era 20px, mas o alinhamento n tinha ficado legal*/
+}
+
+form{/*caixa branca*/
+    background-color: white;
+
+    margin: 80px auto;
+    padding: 64px; /* preenchimento */
+
+    border-radius: 8px;
+    max-width: 730px;
+}
+
+form h1{/*título*/
+    font-size: 36px;
+}
+
+form fieldset{ /*escritos abaixo do título*/
+    margin-top: 64px;
+    border: 0;
+}
+
+form legend{ /*Textos*/
+    margin-bottom: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+form legend h2 { /*Dados da entidade*/
+    font-size: 24px;
+}
+
+form legend span{
+    color: var(--title-color);
+    font-size: 15px;
+}
+
+form .field { /*formato dos campos de preencher*/
+    flex: 1; /*preenche todo o espaço que os campos têm*/
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 24px; /*cada field terá esse espaçamento em baixo*/
+}
+
+form .field-group{
+    display: flex;
+}
+form input, form select{
+    background-color: var(--white-color);
+
+    border: 0;
+    padding: 16px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+
+    /* outline: none;   ->seria para retirar a borda preta que aparece quando o campo é selecionado*/
+}
+form select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form label{ /*formato dos títulos de cada campo*/
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+form .field-group .field + .field{ /*o sinal de mais pega o campo de complemento de endereço*/
+    margin-left: 24px;
+}
+
+form button{
+    width: 260px;
+    height: 56px;
+
+    background-color: var(--primary-color);
+    border-radius: 8px;
+
+    color:white;
+    font-weight: bold;
+    font-size: 16px;
+
+    border: 0;
+
+    margin-top: 40px;
+    transition: background-color 400ms;
+}
+
+form button:hover{
+    background-color: #2fb86e;
+}
+
+.items-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /*organiza os itens em 3 colunas de 1 fração-cálculos do pc*/
+    gap: 16px; /*separa os itens, antes eram um bloco só, com margem teria q fazer um a um*/
+}
+
+.items-grid li{
+    background-color: #f5f5f5;
+    list-style: none; /*tira os "pontinhos"*/
+
+    border: 2px solid #f5f5f5;
+    border-radius: 8px; /*meio q padrão esses pxs*/
+    height: 180px;
+    padding: 32px 24px 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /*Esse space-between vai colocar um espaço na horizontal, pq o flex tá na forma de colunas!*/
+
+    text-align: center;
+
+    cursor: pointer; /*quando o usuário vai clicar no item, aparece a mãozinha, e não a setinha normal*/
+}
+
+.items-grid li span{ /*mexer na configuração dos textos que acompanham as imagens*/
+    margin-top: 12 px; /*Separar os textos da imagem*/
+    flex: 1; /*preenche o espaço td da caixinha dele*/
+
+    display: flex;
+    align-items: center;
+
+    color: var(--title-color);
+}
+.items-grid li.selected{/*procurar dentro do items-grid, o li com a classe selected, se n estivessem juntos, seria dentro do li que teria a classe, estaria errado*/
+    background: #e1faec;
+    border: 2px solid #34cb79 /*é assim q a caixa vai ficar qdo for selecionada*/
+}
+
+.items-grid li img, .items-grid li span{
+    pointer-events: none; /*não deixa clicar na imagem ou no texto, apenas na caixa toda! :)*/
+}
